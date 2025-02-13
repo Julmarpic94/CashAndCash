@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfldwyr1uh555"]
+
+[ext_resource type="Texture2D" uid="uid://bpgh6ndlxwjbo" path="res://Images/Pickups/moneda50.png" id="1_cmyln"]
+[ext_resource type="FontFile" uid="uid://byt31ylsqbup1" path="res://fuente.ttf" id="2_opu3g"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="coin" type="TextureRect" parent="."]
+offset_left = 15.0
+offset_top = 11.0
+offset_right = 86.0
+offset_bottom = 82.0
+texture = ExtResource("1_cmyln")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="coin"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = -10.0
+offset_right = 165.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_opu3g")
+theme_override_font_sizes/font_size = 50
+text = "0"

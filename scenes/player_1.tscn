@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://btpb0fxypeq78"]
+
+[ext_resource type="Texture2D" uid="uid://4sp3lqekkluc" path="res://off road racing/car-body.png" id="1_0ag2u"]
+[ext_resource type="Script" path="res://player_1.gd" id="1_pjumu"]
+[ext_resource type="PackedScene" uid="uid://cr0vxxl2bk3yo" path="res://scenes/wheel_1.tscn" id="2_vbgyj"]
+
+[node name="Player1" type="RigidBody2D" groups=["player1"]]
+gravity_scale = 3.0
+script = ExtResource("1_pjumu")
+
+[node name="Car" type="Sprite2D" parent="."]
+texture = ExtResource("1_0ag2u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["player1"]]
+visible = false
+position = Vector2(1, -1)
+polygon = PackedVector2Array(-151, 78, 295, 79, 321, 38, 308, -19, 151, -32, 50, -79, -94, -72, -172, -53, -210, -11, -311, -10, -331, 12, -327, 56, -292, 76)
+
+[node name="WheelHolder" type="PinJoint2D" parent="." groups=["player1"]]
+position = Vector2(-228, 102)
+node_a = NodePath("..")
+node_b = NodePath("Wheel1")
+softness = 1.18
+
+[node name="Wheel1" parent="WheelHolder" instance=ExtResource("2_vbgyj")]
+
+[node name="WheelHolder2" type="PinJoint2D" parent="." groups=["player1"]]
+position = Vector2(222, 100)
+node_a = NodePath("..")
+node_b = NodePath("Wheel1")
+softness = 1.18
+
+[node name="Wheel1" parent="WheelHolder2" instance=ExtResource("2_vbgyj")]

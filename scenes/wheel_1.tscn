@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr0vxxl2bk3yo"]
+
+[ext_resource type="Texture2D" uid="uid://cio5uf67ebtf1" path="res://off road racing/car-wheel.png" id="1_s48b2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_byssj"]
+radius = 54.0093
+
+[node name="Wheel1" type="RigidBody2D" groups=["player1", "wheel"]]
+
+[node name="Wheel1" type="Sprite2D" parent="."]
+texture = ExtResource("1_s48b2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_byssj")
