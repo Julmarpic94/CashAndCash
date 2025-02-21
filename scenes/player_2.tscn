@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://be5uofno1shsf"]
+
+[ext_resource type="Script" path="res://scenes/player_2.gd" id="1_isy1g"]
+[ext_resource type="PackedScene" uid="uid://ds4h5d435s1o5" path="res://scenes/wheelDel.tscn" id="1_kpc6t"]
+[ext_resource type="Texture2D" uid="uid://d0so3me2npsn3" path="res://Images/Motocross/motoSolaNB.png" id="1_m3ys8"]
+[ext_resource type="PackedScene" uid="uid://wmepkkwgueb" path="res://scenes/wheelTras.tscn" id="2_nawyb"]
+[ext_resource type="Texture2D" uid="uid://clbjib5bvwy6j" path="res://Images/Motocross/cuerpo.png" id="2_td5l4"]
+
+[node name="Player2" type="RigidBody2D" groups=["player2", "wheel2"]]
+script = ExtResource("1_isy1g")
+
+[node name="WheelHolderDel" type="PinJoint2D" parent="." groups=["player2"]]
+node_a = NodePath("../Wheel2")
+node_b = NodePath("..")
+bias = 0.9
+softness = 1.0
+
+[node name="Wheel2" parent="." instance=ExtResource("1_kpc6t")]
+position = Vector2(167, 76)
+
+[node name="WheelHolderTras" type="PinJoint2D" parent="." groups=["player2"]]
+node_a = NodePath("..")
+node_b = NodePath("../Wheel3")
+bias = 0.9
+softness = 1.0
+
+[node name="Wheel3" parent="." instance=ExtResource("2_nawyb")]
+position = Vector2(-162, 76)
+
+[node name="Moto" type="Sprite2D" parent="."]
+texture = ExtResource("1_m3ys8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Moto"]
+position = Vector2(-22, -106)
+texture = ExtResource("2_td5l4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["player2"]]
+polygon = PackedVector2Array(-209, -80, -169, -78, -147, -69, -148, -37, -101, -5, -71, -6, -89, 36, -162, 65, -159, 84, -49, 50, -25, 65, 31, 61, 67, 49, 55, -11, 97, -44, 144, 69, 172, 84, 183, 63, 162, 49, 117, -56, 167, -63, 221, -43, 167, -83, 113, -84, 67, -155, 27, -168, -35, -170, -59, -201, -115, -231, -143, -180, -141, -104, -146, -91)

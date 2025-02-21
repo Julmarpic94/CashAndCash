@@ -31,3 +31,9 @@ node_b = NodePath("Wheel1")
 softness = 1.18
 
 [node name="Wheel1" parent="WheelHolder2" instance=ExtResource("2_vbgyj")]
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

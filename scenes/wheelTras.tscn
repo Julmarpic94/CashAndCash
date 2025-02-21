@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://wmepkkwgueb"]
+
+[ext_resource type="Texture2D" uid="uid://bht0tcpiv8ypw" path="res://Images/Motocross/ruedaTrasera.png" id="1_espd3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nlidw"]
+radius = 82.0
+
+[node name="Wheel3" type="RigidBody2D" groups=["player1", "wheel"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_espd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_nlidw")

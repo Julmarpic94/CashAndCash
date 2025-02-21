@@ -1,13 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl7m3ks1fbwc4"]
+[gd_scene load_steps=9 format=3 uid="uid://bl7m3ks1fbwc4"]
 
 [ext_resource type="Script" path="res://code/coin.gd" id="1_geave"]
 [ext_resource type="Texture2D" uid="uid://bpgh6ndlxwjbo" path="res://Images/Pickups/moneda50.png" id="2_cdkmg"]
 [ext_resource type="AudioStream" uid="uid://di33iac8a2swh" path="res://Audio/Coin.wav" id="3_xqoam"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_elxq2"]
-radius = 70.1142
+radius = 55.0364
 
-[sub_resource type="Animation" id="Animation_8eobr"]
+[sub_resource type="Animation" id="Animation_0pqc5"]
+resource_name = "Pickup2"
+
+[sub_resource type="Animation" id="Animation_thmfm"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -20,19 +23,20 @@ tracks/0/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate:a")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_p6adq"]
+[sub_resource type="Animation" id="Animation_htiqn"]
 resource_name = "pickup"
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -41,20 +45,21 @@ tracks/0/path = NodePath("Sprite2D:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.0964733, -38, 0, -0.25, 0, 0.0631399, -41, -87, -0.203527, 2, 0.25, 0),
-"times": PackedFloat32Array(0, 0.0333333, 0.333333)
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -100, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
 }
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:modulate:a")
+tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0.0333333, 0.333333)
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/2/type = "audio"
 tracks/2/imported = false
@@ -68,14 +73,15 @@ tracks/2/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("3_xqoam")
 }],
-"times": PackedFloat32Array(0.0333333)
+"times": PackedFloat32Array(0)
 }
 tracks/2/use_blend = true
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh8na"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4cdo"]
 _data = {
-"RESET": SubResource("Animation_8eobr"),
-"pickup": SubResource("Animation_p6adq")
+"Pickup2": SubResource("Animation_0pqc5"),
+"RESET": SubResource("Animation_thmfm"),
+"pickup": SubResource("Animation_htiqn")
 }
 
 [node name="Coin" type="Area2D"]
@@ -86,14 +92,15 @@ script = ExtResource("1_geave")
 texture = ExtResource("2_cdkmg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_elxq2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nh8na")
+"": SubResource("AnimationLibrary_s4cdo")
 }
 
-[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

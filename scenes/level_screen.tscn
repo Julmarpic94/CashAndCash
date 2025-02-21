@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://daeoeuwf25my6"]
+
+[ext_resource type="Texture2D" uid="uid://cs3kfjyqsa7qi" path="res://Images/Motocross/fondoRecursos.png" id="1_bb6w4"]
+[ext_resource type="FontFile" uid="uid://byt31ylsqbup1" path="res://fuente.ttf" id="2_kvsii"]
+
+[sub_resource type="GDScript" id="GDScript_nvpg8"]
+script/source = "extends PanelContainer
+
+
+var level1_scene = \"res://level/level_1.tscn\"
+var level2_scene = \"res://level/level_1.tscn\"
+var inicio_scene = \"res://scenes/inicio.tscn\"
+
+
+
+func _on_btn_volver_pressed():
+	get_tree().change_scene_to_file(inicio_scene)
+
+
+func _on_btn_level_1_pressed():
+	get_tree().change_scene_to_file(\"res://levels/level_1.tscn\")
+	
+func _on_btn_level_2_pressed():
+	get_tree().change_scene_to_file(\"res://levels/level_1.tscn\")
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gmrmn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yu0wo"]
+bg_color = Color(0.974438, 0.690468, 0.339434, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sq36v"]
+bg_color = Color(0.572639, 0.366483, 0.0635207, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvj1k"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.811238, 0.512865, 0.159762, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[node name="LevelScreen" type="PanelContainer"]
+offset_right = 1925.0
+offset_bottom = 1229.0
+script = SubResource("GDScript_nvpg8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_bb6w4")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 23
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_kvsii")
+theme_override_font_sizes/font_size = 200
+text = "     GAS & CASH  "
+
+[node name="Botones" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="btnLevel_1" type="Button" parent="VBoxContainer/Botones"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("2_kvsii")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gmrmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yu0wo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sq36v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvj1k")
+text = "  Nivel 1  "
+
+[node name="btnLevel_2" type="Button" parent="VBoxContainer/Botones"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("2_kvsii")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gmrmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yu0wo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sq36v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvj1k")
+button_mask = 5
+text = "  Nivel 2  "
+
+[node name="btnVolver" type="Button" parent="VBoxContainer/Botones"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("2_kvsii")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gmrmn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yu0wo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sq36v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvj1k")
+text = "  Volver "
+
+[connection signal="pressed" from="VBoxContainer/Botones/btnLevel_1" to="." method="_on_btn_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Botones/btnLevel_2" to="." method="_on_btn_level_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Botones/btnVolver" to="." method="_on_btn_volver_pressed"]

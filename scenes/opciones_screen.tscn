@@ -1,0 +1,179 @@
+[gd_scene load_steps=8 format=3 uid="uid://de0hjum0ij61l"]
+
+[ext_resource type="Texture2D" uid="uid://cs3kfjyqsa7qi" path="res://Images/Motocross/fondoRecursos.png" id="1_qi7sy"]
+[ext_resource type="Script" path="res://code/opciones_screen.gd" id="1_uov4e"]
+[ext_resource type="FontFile" uid="uid://byt31ylsqbup1" path="res://fuente.ttf" id="2_ftuch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avb8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkxii"]
+bg_color = Color(0.974438, 0.690468, 0.339434, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptp1y"]
+bg_color = Color(0.572639, 0.366483, 0.0635207, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05gbr"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.811238, 0.512865, 0.159762, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[node name="Opciones_screen" type="PanelContainer"]
+offset_right = 1925.0
+offset_bottom = 1229.0
+script = ExtResource("1_uov4e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_qi7sy")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 23
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ftuch")
+theme_override_font_sizes/font_size = 200
+text = "Créditos"
+
+[node name="Creditos" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Label8" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ftuch")
+theme_override_font_sizes/font_size = 60
+text = "Desarrollador:  Julián Martínez"
+horizontal_alignment = 1
+
+[node name="enlace3" type="LinkButton" parent="VBoxContainer/Creditos/Label8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.886
+anchor_bottom = 1.0
+offset_left = 411.0
+offset_right = 6.93195
+offset_bottom = 14.0
+
+[node name="Label3" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ftuch")
+theme_override_font_sizes/font_size = 60
+text = "Basado en tutorial de  LucyLavend"
+horizontal_alignment = 1
+
+[node name="enlace1" type="LinkButton" parent="VBoxContainer/Creditos/Label3"]
+layout_mode = 2
+anchor_top = 0.5
+anchor_right = 0.945
+anchor_bottom = 0.851
+offset_left = 573.0
+offset_top = -20.0
+offset_right = 29.59
+offset_bottom = 15.112
+
+[node name="Label6" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ftuch")
+theme_override_font_sizes/font_size = 60
+text = "Música: Audiogreen"
+horizontal_alignment = 1
+
+[node name="enlace2" type="LinkButton" parent="VBoxContainer/Creditos/Label6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.295
+anchor_right = 0.549
+anchor_bottom = 0.966
+offset_left = 202.0
+offset_top = 0.039999
+offset_right = 0.0379639
+offset_bottom = -0.00800323
+
+[node name="Label7" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ftuch")
+theme_override_font_sizes/font_size = 60
+text = "Imágenes: Generadas con (ChatGPT)"
+horizontal_alignment = 1
+
+[node name="btnVolver" type="Button" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("2_ftuch")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_avb8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mkxii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ptp1y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gbr")
+text = "  Volver "
+
+[connection signal="pressed" from="VBoxContainer/Creditos/Label8/enlace3" to="." method="_on_enlace_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos/Label3/enlace1" to="." method="_on_enlace_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos/Label6/enlace2" to="." method="_on_enlace_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Creditos/btnVolver" to="." method="_on_btn_volver_pressed"]

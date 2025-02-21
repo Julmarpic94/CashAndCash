@@ -1,15 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7wjd2b4oh0m3"]
+[gd_scene load_steps=8 format=3 uid="uid://b7wjd2b4oh0m3"]
 
 [ext_resource type="Script" path="res://code/fuel.gd" id="1_x8imw"]
 [ext_resource type="Texture2D" uid="uid://2kymgu5ky0j1" path="res://Images/Pickups/fuel1.png" id="2_n57ny"]
-[ext_resource type="AudioStream" uid="uid://di33iac8a2swh" path="res://Audio/Coin.wav" id="3_f0vwy"]
 [ext_resource type="AudioStream" uid="uid://26s5otqmgh0j" path="res://Audio/recarga.wav" id="3_ffju7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_elxq2"]
 radius = 70.1142
 
 [sub_resource type="Animation" id="Animation_8eobr"]
-loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,9 +80,9 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_f0vwy")
+"stream": ExtResource("3_ffju7")
 }],
-"times": PackedFloat32Array(0.0333333)
+"times": PackedFloat32Array(0)
 }
 tracks/2/use_blend = true
 
@@ -94,8 +92,6 @@ _data = {
 "pickup": SubResource("Animation_p6adq")
 }
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_sdp4l"]
-
 [node name="Fuel" type="Area2D"]
 position = Vector2(0, -100)
 script = ExtResource("1_x8imw")
@@ -104,15 +100,16 @@ script = ExtResource("1_x8imw")
 texture = ExtResource("2_n57ny")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_elxq2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_nh8na")
 }
 
-[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamPolyphonic_sdp4l")
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
