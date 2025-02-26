@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d16mpuxo61rp2"]
+[gd_scene load_steps=5 format=3 uid="uid://d16mpuxo61rp2"]
 
 [ext_resource type="Texture2D" uid="uid://kfncrecjg341" path="res://Images/Motocross/lineaMetaFrente.png" id="1_0d7ig"]
 [ext_resource type="Script" path="res://code/linea_meta.gd" id="1_o8ngy"]
+[ext_resource type="AudioStream" uid="uid://cisdfnddxh484" path="res://Audio/win.ogg" id="3_l5fbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_if2ag"]
 size = Vector2(577, 641)
@@ -16,5 +17,10 @@ texture = ExtResource("1_0d7ig")
 visible = false
 position = Vector2(18.5, -13.5)
 shape = SubResource("RectangleShape2D_if2ag")
+
+[node name="sonidoWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l5fbm")
+volume_db = 4.0
+pitch_scale = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

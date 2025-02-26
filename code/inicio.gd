@@ -13,3 +13,15 @@ func _on_btn_opcion_pressed() -> void:
 
 func _on_btn_salir_pressed():
 	get_tree().quit()
+
+
+func _on_btn_start_mouse_entered() -> void:
+	$clikBoton.play()
+
+
+func _on_btn_opcion_mouse_entered() -> void:
+	$clikBoton.play()
+
+
+func _on_btn_salir_mouse_entered() -> void:
+	$clikBoton.play()

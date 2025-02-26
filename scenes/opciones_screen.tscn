@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://de0hjum0ij61l"]
+[gd_scene load_steps=9 format=3 uid="uid://de0hjum0ij61l"]
 
 [ext_resource type="Texture2D" uid="uid://cs3kfjyqsa7qi" path="res://Images/Motocross/fondoRecursos.png" id="1_qi7sy"]
 [ext_resource type="Script" path="res://code/opciones_screen.gd" id="1_uov4e"]
 [ext_resource type="FontFile" uid="uid://byt31ylsqbup1" path="res://fuente.ttf" id="2_ftuch"]
+[ext_resource type="AudioStream" uid="uid://dur3n4owdwwm0" path="res://Audio/click.ogg" id="4_kfrvt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avb8l"]
 
@@ -46,8 +47,8 @@ shadow_size = 10
 shadow_offset = Vector2(0, 10)
 
 [node name="Opciones_screen" type="PanelContainer"]
-offset_right = 1925.0
-offset_bottom = 1229.0
+offset_right = 1915.0
+offset_bottom = 1080.0
 script = ExtResource("1_uov4e")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -140,13 +141,14 @@ horizontal_alignment = 1
 [node name="enlace2" type="LinkButton" parent="VBoxContainer/Creditos/Label6"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.446
 anchor_top = 0.295
-anchor_right = 0.549
-anchor_bottom = 0.966
-offset_left = 202.0
-offset_top = 0.039999
-offset_right = 0.0379639
-offset_bottom = -0.00800323
+anchor_right = 0.779
+anchor_bottom = 0.676
+offset_left = -0.348022
+offset_top = 4.04
+offset_right = 0.297974
+offset_bottom = 29.512
 
 [node name="Label7" type="Label" parent="VBoxContainer/Creditos"]
 layout_mode = 2
@@ -173,7 +175,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ptp1y")
 theme_override_styles/normal = SubResource("StyleBoxFlat_05gbr")
 text = "  Volver "
 
+[node name="clickBoton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kfrvt")
+
 [connection signal="pressed" from="VBoxContainer/Creditos/Label8/enlace3" to="." method="_on_enlace_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Creditos/Label3/enlace1" to="." method="_on_enlace_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Creditos/Label6/enlace2" to="." method="_on_enlace_2_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Creditos/btnVolver" to="." method="_on_btn_volver_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Creditos/btnVolver" to="." method="_on_btn_volver_pressed"]

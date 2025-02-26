@@ -21,3 +21,7 @@ func _on_enlace_1_pressed() -> void:
 
 func _on_enlace_2_pressed() -> void:
 	OS.shell_open(enlaceMusica)
+
+
+func _on_btn_volver_mouse_entered() -> void:
+	$clickBoton.play()

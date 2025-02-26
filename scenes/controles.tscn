@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://dm63jh6v2bta0"]
+
+[ext_resource type="Script" path="res://scenes/controles.gd" id="1_qfg1j"]
+[ext_resource type="Texture2D" uid="uid://cs3kfjyqsa7qi" path="res://Images/Motocross/fondoRecursos.png" id="2_x42py"]
+[ext_resource type="FontFile" uid="uid://byt31ylsqbup1" path="res://fuente.ttf" id="3_8u3o5"]
+[ext_resource type="AudioStream" uid="uid://dur3n4owdwwm0" path="res://Audio/click.ogg" id="4_ycaro"]
+[ext_resource type="Texture2D" uid="uid://s1k5t2aq6f8a" path="res://Images/Other/btnUpPush.png" id="5_10efh"]
+[ext_resource type="Texture2D" uid="uid://c054q7xw6j2l3" path="res://Images/Other/btnDownPush.png" id="6_j4nd7"]
+[ext_resource type="Texture2D" uid="uid://bvodn3hb3od6j" path="res://Images/Other/btnRightPush.png" id="7_fb575"]
+[ext_resource type="Texture2D" uid="uid://b8at2sidf0n4h" path="res://Images/Other/btnLeftPush.png" id="8_gqe8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avb8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkxii"]
+bg_color = Color(0.974438, 0.690468, 0.339434, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptp1y"]
+bg_color = Color(0.572639, 0.366483, 0.0635207, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05gbr"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.811238, 0.512865, 0.159762, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 10
+shadow_offset = Vector2(0, 10)
+
+[node name="Controles" type="PanelContainer"]
+offset_right = 1921.0
+offset_bottom = 1100.0
+script = ExtResource("1_qfg1j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_x42py")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 23
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_8u3o5")
+theme_override_font_sizes/font_size = 200
+text = "Controles
+"
+
+[node name="Creditos" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Label8" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_8u3o5")
+theme_override_font_sizes/font_size = 60
+text = "Accelerar:  "
+
+[node name="Label3" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_8u3o5")
+theme_override_font_sizes/font_size = 60
+text = "Marcha atrás/ Frenar: "
+
+[node name="Label6" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_8u3o5")
+theme_override_font_sizes/font_size = 60
+text = "Inclinar delante:"
+
+[node name="Label7" type="Label" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_8u3o5")
+theme_override_font_sizes/font_size = 60
+text = "Inclinar atrás:"
+
+[node name="btnVolver" type="Button" parent="VBoxContainer/Creditos"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("3_8u3o5")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_avb8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mkxii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ptp1y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_05gbr")
+text = "  Volver "
+
+[node name="clickBoton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ycaro")
+
+[node name="BtnUpPush" type="Sprite2D" parent="."]
+position = Vector2(1304, 468)
+texture = ExtResource("5_10efh")
+
+[node name="BtnDownPush" type="Sprite2D" parent="."]
+position = Vector2(1575, 578)
+texture = ExtResource("6_j4nd7")
+
+[node name="BtnRightPush" type="Sprite2D" parent="."]
+position = Vector2(1432, 677)
+texture = ExtResource("7_fb575")
+
+[node name="BtnLeftPush" type="Sprite2D" parent="."]
+position = Vector2(1393, 790)
+texture = ExtResource("8_gqe8l")
+
+[connection signal="mouse_entered" from="VBoxContainer/Creditos/btnVolver" to="." method="_on_btn_volver_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Creditos/btnVolver" to="." method="_on_btn_volver_pressed"]

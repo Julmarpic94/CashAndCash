@@ -16,3 +16,11 @@ func _on_btn_sig_level_pressed() -> void:
 
 func _on_btn_menu_pressed() -> void:
 	get_tree().change_scene_to_file(inicio_screen)
+
+
+func _on_btn_sig_level_mouse_entered() -> void:
+	$clickBoton.play()
+
+
+func _on_btn_menu_mouse_entered() -> void:
+	$clickBoton.play()

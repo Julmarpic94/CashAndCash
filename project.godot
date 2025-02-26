@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="HillClimb"
+config/name="Gas&Cash"
+config/description="Gas & Cash is a 2D racing video game based on LucyLavend's tutorial, \"How to do a Hill Climb Racing.\" This game is licensed under Creative Commons and is free to use and reuse, except for its assets, which are not allowed for commercial use. It is a personal project created for educational purposes by Julián Martínez."
 run/main_scene="res://scenes/inicio.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icono.svg"
+config/windows_native_icon="res://icono.ico"
 
 [autoload]
 
@@ -23,6 +25,7 @@ Global="*res://code/global.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -61,6 +64,11 @@ texture={
 "roughness/src_normal": ""
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.60678, 0.704808, 0.993202, 1)
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.26779, 0.26779, 0.26779, 1)

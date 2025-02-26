@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://qpcq5e3lvurc"]
+[gd_scene load_steps=11 format=3 uid="uid://qpcq5e3lvurc"]
 
 [ext_resource type="Script" path="res://code/finish_screen.gd" id="1_rjf3c"]
 [ext_resource type="Texture2D" uid="uid://cs3kfjyqsa7qi" path="res://Images/Motocross/fondoRecursos.png" id="2_3bk4w"]
 [ext_resource type="FontFile" uid="uid://byt31ylsqbup1" path="res://fuente.ttf" id="3_k86ht"]
-[ext_resource type="AudioStream" uid="uid://b550hvcrpkmps" path="res://Audio/musicaIntro.mp3" id="4_00e27"]
 [ext_resource type="Texture2D" uid="uid://b83kglkq6j4td" path="res://Images/Pickups/moneda10.png" id="4_ucs8y"]
+[ext_resource type="AudioStream" uid="uid://dsyrttjiauvd7" path="res://Audio/musicaIntro.ogg" id="5_jkyta"]
+[ext_resource type="AudioStream" uid="uid://dur3n4owdwwm0" path="res://Audio/click.ogg" id="6_aeo8t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gmrmn"]
 
@@ -48,8 +49,8 @@ shadow_size = 10
 shadow_offset = Vector2(0, 10)
 
 [node name="FinishScreen" type="PanelContainer"]
-offset_right = 1925.0
-offset_bottom = 1229.0
+offset_right = 1917.0
+offset_bottom = 1064.0
 script = ExtResource("1_rjf3c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -123,9 +124,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_hvj1k")
 text = "  SALIR  "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_00e27")
+stream = ExtResource("5_jkyta")
 autoplay = true
 parameters/looping = true
 
+[node name="clickBoton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_aeo8t")
+
+[connection signal="mouse_entered" from="VBoxContainer/Botones/btn_Sig_Level" to="." method="_on_btn_sig_level_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Botones/btn_Sig_Level" to="." method="_on_btn_sig_level_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Botones/btn_Menu" to="." method="_on_btn_menu_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Botones/btn_Menu" to="." method="_on_btn_menu_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://crq2xcieg4qrl"]
+
+[ext_resource type="Texture2D" uid="uid://b8at2sidf0n4h" path="res://Images/Other/btnLeftPush.png" id="1_l5evw"]
+[ext_resource type="Texture2D" uid="uid://cpjf7tjja8p5" path="res://Images/Other/btnLeft.png" id="2_c61ng"]
+[ext_resource type="Texture2D" uid="uid://bvodn3hb3od6j" path="res://Images/Other/btnRightPush.png" id="3_etu58"]
+[ext_resource type="Texture2D" uid="uid://tvxfnj1e4rie" path="res://Images/Other/btnRight.png" id="4_jwb1i"]
+[ext_resource type="Texture2D" uid="uid://c054q7xw6j2l3" path="res://Images/Other/btnDownPush.png" id="5_dynck"]
+[ext_resource type="Texture2D" uid="uid://cj6uqivs5rd8f" path="res://Images/Other/btnDown.png" id="6_nw386"]
+[ext_resource type="Texture2D" uid="uid://s1k5t2aq6f8a" path="res://Images/Other/btnUpPush.png" id="7_hfac2"]
+[ext_resource type="Texture2D" uid="uid://m0fmy301t0wh" path="res://Images/Other/btnUp.png" id="8_lymb1"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+visible = false
+
+[node name="btnLeft" type="TouchScreenButton" parent="."]
+position = Vector2(61, 837)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_l5evw")
+texture_pressed = ExtResource("2_c61ng")
+action = "ui_left"
+
+[node name="btnRight" type="TouchScreenButton" parent="."]
+position = Vector2(368, 838)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_etu58")
+texture_pressed = ExtResource("4_jwb1i")
+action = "ui_right"
+
+[node name="btnDown" type="TouchScreenButton" parent="."]
+position = Vector2(1359, 847)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_dynck")
+texture_pressed = ExtResource("6_nw386")
+action = "ui_down"
+
+[node name="btnUp" type="TouchScreenButton" parent="."]
+position = Vector2(1675, 850)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_hfac2")
+texture_pressed = ExtResource("8_lymb1")
+action = "ui_up"
