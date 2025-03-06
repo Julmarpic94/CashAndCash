@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crq2xcieg4qrl"]
+[gd_scene load_steps=11 format=3 uid="uid://crq2xcieg4qrl"]
 
 [ext_resource type="Texture2D" uid="uid://b8at2sidf0n4h" path="res://Images/Other/btnLeftPush.png" id="1_l5evw"]
 [ext_resource type="Texture2D" uid="uid://cpjf7tjja8p5" path="res://Images/Other/btnLeft.png" id="2_c61ng"]
@@ -8,9 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cj6uqivs5rd8f" path="res://Images/Other/btnDown.png" id="6_nw386"]
 [ext_resource type="Texture2D" uid="uid://s1k5t2aq6f8a" path="res://Images/Other/btnUpPush.png" id="7_hfac2"]
 [ext_resource type="Texture2D" uid="uid://m0fmy301t0wh" path="res://Images/Other/btnUp.png" id="8_lymb1"]
+[ext_resource type="Texture2D" uid="uid://q0jgbcck7633" path="res://Images/Other/btnSalir.png" id="9_qd2lw"]
+[ext_resource type="Texture2D" uid="uid://ofguaeqcsn7n" path="res://Images/Other/btnSalirPush.png" id="10_pqkjf"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-visible = false
 
 [node name="btnLeft" type="TouchScreenButton" parent="."]
 position = Vector2(61, 837)
@@ -39,3 +40,10 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("7_hfac2")
 texture_pressed = ExtResource("8_lymb1")
 action = "ui_up"
+
+[node name="btnSalir" type="TouchScreenButton" parent="."]
+position = Vector2(1720, 17)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("9_qd2lw")
+texture_pressed = ExtResource("10_pqkjf")
+action = "ui_cancel"
