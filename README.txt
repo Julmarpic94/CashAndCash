@@ -1,5 +1,7 @@
 🏁 Fast-Paced 2D Racing Game – Speed, Skill & Money! 🚀
 
+Play and Enjoy it: https://julmarpic.itch.io/gascash
+
 Get ready for an adrenaline-fueled adventure in this dynamic 2D racing game where every second counts! Race through exciting tracks, collect all the coins before your fuel runs out, and dodge challenging obstacles along the way. Stay on track, push your limits, and master the art of speed and control to reach the finish line.
 
 🎮 Features:
@@ -27,4 +29,8 @@ A huge thanks to the amazing creators who made this possible:
 This game is free to play, and all its content is available at no cost. However, if you enjoy it and want to support my work, feel free to donate – every contribution is greatly appreciated!
 
 🚗 Ready to race? Start your engines and hit the track now! 🏎️💨
+
+Creative Commos License: Julián Martínez
+
+
 
